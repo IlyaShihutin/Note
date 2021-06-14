@@ -1,0 +1,21 @@
+.custom_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.custom_input input {
+  width: 100px;
+  height: 40px;
+}
+
+.custom_input button {
+  width: 80px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: cadetblue;
+}
+
+.custom_input button:hover {
+  cursor: pointer;
+}

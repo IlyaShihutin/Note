@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../css/fonts/OpenSans-Regular.ttf);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+}
+
+html,
+body,
+h1,
+html h2,
+h3,
+h4,
+h5,
+h6,
+html p,
+ol,
+ul,
+li,
+pre,
+code,
+address,
+variable,
+form,
+fieldset,
+blockquote {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.wrapper {
+  width: 768px;
+  margin: 0px 20px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  background: red;
+  margin-top: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper .header .custom_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .header .custom_input input {
+  width: 200px;
+  height: 40px;
+  margin-right: 15px;
+  outline: none;
+}
+
+.wrapper .header .custom_input button {
+  width: 140px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: cadetblue;
+  border: none;
+}
+
+.wrapper .header .custom_input button:hover {
+  cursor: pointer;
+  background-color: #87aeb0;
+}
+
+.wrapper .note_list {
+  width: 100%;
+  height: 500px;
+  overflow: overlay;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.wrapper .note_list .note_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.wrapper .note_list .note_item .note_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .note_list .note_item .note_text p span {
+  font-weight: bold;
+}
