@@ -17,7 +17,7 @@ export default function notesReducer(state = initialState, action) {
         case notesConstants.CHANGE_NOTE:
             return {
                 ...state,
-                notes: action.newNotes,
+                notes: [...action.newNotes],
             }
         default: return state
     }

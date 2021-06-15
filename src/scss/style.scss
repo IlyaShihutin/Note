@@ -44,72 +44,166 @@ blockquote {
 }
 
 .wrapper {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
     width: 768px;
-    margin: 0px 20px;
-    padding: 20px;
+    height: calc(100vh - 40px);
     display: flex;
     margin: auto;
-    background: red;
-    margin-top: 20px;
+    background: #222736;
     flex-direction: column;
     align-items: center;
+    border-radius: 15px;
 
     .header {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        background: rgba(42, 48, 66, 1);
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 15px 15px 0px 0px;
+
+        .add_note_block {
+            .custom_input {
+                button {
+                    margin-right: 10px;
+                }
+            }
+        }
 
         .custom_input {
             display: flex;
 
             input {
                 width: 200px;
-                height: 40px;
+                height: 36px;
                 margin-right: 15px;
                 outline: none;
-            }
-
-            button {
-                width: 140px;
-                border-radius: 10px;
-                height: 40px;
-                background-color: cadetblue;
-
                 border: none;
-
-                &:hover {
-                    cursor: pointer;
-                    background-color: rgb(135, 174, 176);
-                }
+                color: #fff;
+                background: #222736;
+                border-radius: 2px;
             }
+
         }
     }
 
     .note_list {
         width: 100%;
-        height: 500px;
+        height: 100%;
         overflow: overlay;
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 15px;
+        border-radius: 0px 0px 15px 15px;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background: #CCCCCC;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        scrollbar-color: #cccccc transparent;
+        background: rgba(42, 48, 66, 1);
 
         .note_item {
             display: flex;
             flex-direction: column;
             margin-bottom: 15px;
-            position: relative;
+            background: #222736;
+            padding: 10px;
+            border-radius: 10px;
 
             .note_text {
                 display: flex;
+                color: #fff;
+                margin-bottom: 10px;
 
                 p {
+                    word-break: break-all;
 
                     span {
                         font-weight: bold;
                     }
                 }
+            }
 
+            .custom_input {
+                display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 100%;
+                    height: 36px;
+                    outline: none;
+                    border: none;
+                    color: #fff;
+                    background: rgba(42, 48, 66, 1);
+                    border-radius: 2px;
+                    margin-bottom: 10px;
+                }
+
+                button {
+                    width: 48%;
+                    height: 40px;
+
+                    &.btn {
+                        margin-left: auto;
+                    }
+                }
             }
         }
+    }
+
+    .edit_btn,
+    .confirm_btn,
+    .btn,
+    .close_btn {
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        width: 136px;
+        height: 35px;
+        color: #fff;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .confirm_btn {
+        background: #34C38F;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(135, 174, 176);
+        }
+    }
+
+    .edit_btn,
+    .btn {
+        background: #50A5F1;
+    }
+
+    .edit_btn {
+        width: 100%;
+    }
+
+    .close_btn {
+        background: #F46A6A;
+        width: 100%;
+        margin-top: 10px;
     }
 }

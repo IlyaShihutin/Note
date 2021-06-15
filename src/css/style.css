@@ -45,15 +45,17 @@ blockquote {
 }
 
 .wrapper {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  left: 0;
   width: 768px;
-  margin: 0px 20px;
-  padding: 20px;
+  height: calc(100vh - 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: auto;
-  background: red;
-  margin-top: 20px;
+  background: #222736;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -61,6 +63,7 @@ blockquote {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 15px;
 }
 
 .wrapper .header {
@@ -71,6 +74,14 @@ blockquote {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  background: #2a3042;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.wrapper .header .add_note_block .custom_input button {
+  margin-right: 10px;
 }
 
 .wrapper .header .custom_input {
@@ -81,27 +92,18 @@ blockquote {
 
 .wrapper .header .custom_input input {
   width: 200px;
-  height: 40px;
+  height: 36px;
   margin-right: 15px;
   outline: none;
-}
-
-.wrapper .header .custom_input button {
-  width: 140px;
-  border-radius: 10px;
-  height: 40px;
-  background-color: cadetblue;
   border: none;
-}
-
-.wrapper .header .custom_input button:hover {
-  cursor: pointer;
-  background-color: #87aeb0;
+  color: #fff;
+  background: #222736;
+  border-radius: 2px;
 }
 
 .wrapper .note_list {
   width: 100%;
-  height: 500px;
+  height: 100%;
   overflow: overlay;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,7 +112,25 @@ blockquote {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 10px;
+  padding: 15px;
+  border-radius: 0px 0px 15px 15px;
+  scrollbar-color: #cccccc transparent;
+  background: #2a3042;
+}
+
+.wrapper .note_list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+}
+
+.wrapper .note_list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #CCCCCC;
+}
+
+.wrapper .note_list::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .wrapper .note_list .note_item {
@@ -122,15 +142,94 @@ blockquote {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 15px;
-  position: relative;
+  background: #222736;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .wrapper .note_list .note_item .note_text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.wrapper .note_list .note_item .note_text p {
+  word-break: break-all;
 }
 
 .wrapper .note_list .note_item .note_text p span {
   font-weight: bold;
+}
+
+.wrapper .note_list .note_item .custom_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrapper .note_list .note_item .custom_input input {
+  width: 100%;
+  height: 36px;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: #2a3042;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.wrapper .note_list .note_item .custom_input button {
+  width: 48%;
+  height: 40px;
+}
+
+.wrapper .note_list .note_item .custom_input button.btn {
+  margin-left: auto;
+}
+
+.wrapper .edit_btn,
+.wrapper .confirm_btn,
+.wrapper .btn,
+.wrapper .close_btn {
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  width: 136px;
+  height: 35px;
+  color: #fff;
+}
+
+.wrapper .edit_btn:hover,
+.wrapper .confirm_btn:hover,
+.wrapper .btn:hover,
+.wrapper .close_btn:hover {
+  cursor: pointer;
+}
+
+.wrapper .confirm_btn {
+  background: #34C38F;
+}
+
+.wrapper .confirm_btn:hover {
+  cursor: pointer;
+  background-color: #87aeb0;
+}
+
+.wrapper .edit_btn,
+.wrapper .btn {
+  background: #50A5F1;
+}
+
+.wrapper .edit_btn {
+  width: 100%;
+}
+
+.wrapper .close_btn {
+  background: #F46A6A;
+  width: 100%;
+  margin-top: 10px;
 }

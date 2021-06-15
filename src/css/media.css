@@ -1,0 +1,69 @@
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+  }
+  .wrapper .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .wrapper .header .add_note_block {
+    margin-bottom: 20px;
+  }
+  .wrapper .header .add_note_block .custom_input .confirm_btn {
+    margin: 0;
+  }
+  .wrapper .header .custom_input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .wrapper .header .custom_input input {
+    width: 300px;
+  }
+  .wrapper .header .custom_input .confirm_btn {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .wrapper {
+    width: 100%;
+    top: 0;
+    height: 100%;
+    border-radius: 0;
+  }
+  .wrapper .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 0;
+  }
+  .wrapper .header .add_note_block {
+    margin-bottom: 20px;
+  }
+  .wrapper .header .custom_input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .wrapper .header .custom_input input {
+    width: 200px;
+    height: 40px;
+  }
+  .wrapper .header .custom_input .confirm_btn {
+    margin: 0;
+    height: 40px;
+  }
+  .wrapper .note_list {
+    border-radius: 0;
+  }
+}

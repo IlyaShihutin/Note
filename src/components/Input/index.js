@@ -11,8 +11,8 @@ const Input = ({ name, onClick, defaultValue, edit, id }) => {
     return (
         <div className="custom_input">
             <input onChange={e => onChange(e)} value={value} />
-            <button onClick={() => handleClick(value)}>{name}</button>
-            {edit && <button onClick={() => handleClick(defaultValue)}>Отменить</button>}
+            <button className="confirm_btn" onClick={() => handleClick(value)}>{name}</button>
+            {edit && <button className="btn" onClick={() => handleClick(defaultValue)}>Отменить</button>}
         </div>
     );
 };
