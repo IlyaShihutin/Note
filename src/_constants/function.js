@@ -20,3 +20,13 @@ export const handleFilterTag = (notes, filterTag) => {
         return notes;
     }
 }
+
+export const unique = (arr) => {
+    return Array.from(new Set(arr));
+}
+export const scroll = (id) => {
+    setTimeout(() => {
+        let objControl = document.getElementById(id);
+        objControl.scrollIntoView({ behavior: 'smooth' });
+    }, 0)
+}

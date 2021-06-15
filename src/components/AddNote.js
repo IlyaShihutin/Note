@@ -1,19 +1,20 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Input from "./Input/index"
 import { actionNote } from "../redux/actions/actionNote"
-import { breakString } from "../_constants/function"
+import { breakString, unique, scroll } from "../_constants/function"
 const AddNote = () => {
+    const [error, setError] = useState(false)
     const dispatch = useDispatch();
     const notes = useSelector(state => state.notesReducer.notes);
 
     const onClick = (note) => {
-        if (note) {
-            const [text, tag] = breakString(note)
+        const [text, tag] = breakString(note)
+        if (text) {
             const objNote = {
                 text,
-                tag,
+                tag: unique(tag),
                 id: notes.length ? notes[notes.length - 1].id + 1 : 1,
             }
             dispatch(actionNote.handleAddNote(objNote))
@@ -21,11 +22,14 @@ const AddNote = () => {
             const localNotes = notes;
             localNotes.push(objNote);
             localStorage.setItem("notes", JSON.stringify(localNotes));
+            scroll(objNote.id);
+        } else {
+            setError(true)
         }
     }
     return (
         <div className="add_note_block">
-            <Input name="Добавить заметку" onClick={onClick} />
+            <Input name="Добавить заметку" error={error} setError={setError} onClick={onClick} />
         </div>
     );
 }

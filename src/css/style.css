@@ -84,6 +84,10 @@ blockquote {
   margin-right: 10px;
 }
 
+.wrapper .header .add_note_block .custom_input .error {
+  border: 1px solid red;
+}
+
 .wrapper .header .custom_input {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,6 +135,16 @@ blockquote {
 
 .wrapper .note_list::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.wrapper .note_list .filter_title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.wrapper .note_list .filter_title span {
+  font-weight: bold;
 }
 
 .wrapper .note_list .note_item {

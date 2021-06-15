@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { breakString, handleFilterTag } from "../_constants/function"
+import { breakString, handleFilterTag, unique } from "../_constants/function"
 import { actionNote } from "../redux/actions/actionNote"
 import Input from "./Input/index"
 
@@ -19,18 +19,20 @@ const NoteList = ({ filterTag }) => {
     const openEdit = (id) => {
         setEdit(edit => [...edit, id]);
     }
+    
     const closeEdit = (id) => {
         const newEdit = edit.filter(elem => elem !== id)
         setEdit(newEdit);
     }
+
     const handleEdit = (note, id) => {
-        if (note) {
-            const [text, tag] = breakString(note)
+        const [text, tag] = breakString(note)
+        if (text || tag.length) {
             const objNote = notes;
             for (var i in objNote) {
                 if (objNote[i].id === id) {
                     objNote[i].text = text;
-                    objNote[i].tag = tag;
+                    objNote[i].tag = unique(tag);
                     break;
                 }
             }
@@ -44,8 +46,9 @@ const NoteList = ({ filterTag }) => {
 
     return (
         <div className="note_list">
+            <p className="filter_title">{filterTag && "Фильтр по "}<span>{filterTag}</span></p>
             {list?.map((elem, index) => {
-                return <div className="note_item" key={`${elem.id}+${index}`}>
+                return <div className="note_item" id={`${elem.id}`} key={`${elem.id}+${index}`}>
                     {!edit.includes(elem.id) ? <>
                         <div className="note_text">
                             <p>{elem.text}
@@ -63,6 +66,7 @@ const NoteList = ({ filterTag }) => {
                     <button className="close_btn" onClick={() => delNote(elem.id)}>Удалить</button>
                 </div>
             })}
+
         </div>
     );
 }

@@ -14,6 +14,7 @@ const MainWindow = () => {
             dispatch(actionNote.handleChangeNote(startNotes))
         }
     }, [])
+    
     return (
         <div className="wrapper">
             <div className="header">
